@@ -15,15 +15,43 @@ app.use('/css', express.static(path.join(__dirname, 'css')));
 
 app.get('/', (req, res) => {
   res.send(`
+    <!DOCTYPE html>
+    <html lang="uk">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Express + PUG + EJS Demo</title>
+      <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+      <header class="site-header">
+        <a class="logo" href="/">Express Demo</a>
+        <nav>
+          <a href="/users">Користувачі</a>
+          <a href="/articles">Статті</a>
+        </nav>
+      </header>
+
       <main class="container">
         <h1 class="page-title">Express + PUG + EJS Demo</h1>
-        <ul>
-          <li><a class="back-link" href="/users">/users</a> — список користувачів (PUG)</li>
-          <li><a class="back-link" href="/articles">/articles</a> — список статей (EJS)</li>
-        </ul>
+        <div class="card-grid">
+          <a class="card" href="/users">
+            <h2 class="card-title">/users</h2>
+            <p class="card-text">Список користувачів (PUG)</p>
+          </a>
+          <a class="card" href="/articles">
+            <h2 class="card-title">/articles</h2>
+            <p class="card-text">Список статей (EJS)</p>
+          </a>
+        </div>
       </main>
-`
-  );
+
+      <footer class="site-footer">
+        <p>© 2026 Express + PUG + EJS Demo</p>
+      </footer>
+    </body>
+    </html>
+  `);
 });
 
 // ====================== PUG ======================
