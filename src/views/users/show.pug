@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+  a.back-link(href="/users") ← Назад до списку користувачів
+
+  .detail-card
+    h1.page-title= user.name
+    p.badge= user.role
+    dl.detail-list
+      dt Email
+      dd= user.email
+      dt Дата реєстрації
+      dd= user.joined
+      dt Про користувача
+      dd= user.bio

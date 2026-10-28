@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">Express Demo</a>
+    <nav>
+      <a href="/users">Користувачі</a>
+      <a href="/articles">Статті</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Список статей</h1>
+
+    <% if (typeof error !== 'undefined') { %>
+      <p class="error-message"><%= error %></p>
+    <% } %>
+
+    <div class="card-grid">
+      <% articles.forEach(function(article) { %>
+        <a class="card" href="/articles/<%= article.id %>">
+          <h2 class="card-title"><%= article.title %></h2>
+          <p class="card-subtitle">Автор: <%= article.author %> · <%= article.date %></p>
+          <p class="card-text"><%= article.excerpt %></p>
+        </a>
+      <% }); %>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Express + PUG + EJS Demo</p>
+  </footer>
+</body>
+</html>

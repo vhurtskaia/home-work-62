@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">Express Demo</a>
+    <nav>
+      <a href="/users">Користувачі</a>
+      <a href="/articles">Статті</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <a class="back-link" href="/articles">← Назад до списку статей</a>
+
+    <div class="detail-card">
+      <h1 class="page-title"><%= article.title %></h1>
+      <p class="badge">Автор: <%= article.author %> · <%= article.date %></p>
+      <p class="article-content"><%= article.content %></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Express + PUG + EJS Demo</p>
+  </footer>
+</body>
+</html>

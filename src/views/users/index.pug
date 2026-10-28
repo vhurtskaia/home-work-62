@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  h1.page-title Список користувачів
+
+  if error
+    p.error-message= error
+
+  .card-grid
+    each user in users
+      a.card(href=`/users/${user.id}`)
+        h2.card-title= user.name
+        p.card-subtitle= user.role
+        p.card-text= user.email
